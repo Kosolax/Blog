@@ -1,0 +1,16 @@
+<p>Articles</p>
+<button type="button" routerLink="/article" class="btn btn-primary">Ajouter un article</button>
+<table class="table table-striped" *ngIf="articles">
+  <thead>
+    <tr>
+      <th scope="col">Identifiant</th>
+      <th scope="col">Contenu</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let article of articles">
+      <td [routerLink]="['/article', article.id]">{{ article.id }}</td>
+      <td [routerLink]="['/article', article.id]">{{ article.content }}</td>
+    </tr>
+  </tbody>
+</table>
